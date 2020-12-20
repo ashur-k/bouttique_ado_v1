@@ -129,6 +129,8 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+    print("Postgreess is connected")
+    # print(os.environ.get('DATABASE_URL'))
 else:
     DATABASES = {
         'default': {
@@ -207,9 +209,9 @@ if 'USE_AWS' in os.environ:
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+STRIPE_PUBLIC_KEY = os.getenv('BOUTIQUE_STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('BOUTIQUE_STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('BOUTIQUE_STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
